@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UrlController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [UrlController::class, 'create'])->name('url.create');
+Route::post('/store', [UrlController::class, 'store'])->name('url.store');
+
+Route::get('/{code}', [UrlController::class, 'process'])->name('url.code');
