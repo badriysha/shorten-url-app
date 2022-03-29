@@ -9,13 +9,13 @@ use PUGX\Shortid\Shortid;
 class UrlController extends Controller
 {
     public function create() {
-        return view('layouts.url.index');
+        return view('pages.url.index');
     }
 
     public function store(UrlRequest $request)
     {
         $data = $request->all();
-        $data['code'] = Shortid::generate(7);
+        $data['code'] = Shortid::generate(7, null, true);
 
         $url = Url::create($data);
         return redirect()->route('url.create')->with(['url' => url($url->code)]);

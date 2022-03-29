@@ -58,6 +58,19 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ url('/dashboard') }}">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}">
+                                    {{ __('All Link') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}">
+                                    {{ __('User') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}">
+                                    {{ __('Setting') }}
+                                </a>
+                                <hr>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

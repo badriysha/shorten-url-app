@@ -12,4 +12,16 @@ class Url extends Model
     protected $fillable = [
       'long_url', 'short_url', 'code'
     ];
+
+    public function user(){
+        $this->belongsTo(User::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($url) {
+            $url->user_id = auth()->id();
+        });
+    }
 }
