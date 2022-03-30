@@ -61,12 +61,14 @@
                                 <a class="dropdown-item" href="{{ url('/dashboard') }}">
                                     {{ __('Dashboard') }}
                                 </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}">
-                                    {{ __('All Link') }}
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}">
-                                    {{ __('User') }}
-                                </a>
+                                @if(auth()->user()->roles === 'ADMIN')
+                                    <a class="dropdown-item" href="{{ url('/links') }}">
+                                        {{ __('All Link') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('/users') }}">
+                                        {{ __('User') }}
+                                    </a>
+                                @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}">
                                     {{ __('Setting') }}
                                 </a>

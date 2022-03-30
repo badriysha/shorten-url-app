@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UrlController;
 use Illuminate\Support\Facades\Route;
@@ -21,5 +22,7 @@ Route::get('/', [UrlController::class, 'create'])->name('url.create');
 Route::post('/store', [UrlController::class, 'store'])->name('url.store');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/links', [AdminController::class, 'index'])->middleware('admin');
+Route::get('/users', [AdminController::class, 'user'])->middleware('admin');
 
 Route::get('/{code}', [UrlController::class, 'process'])->name('url.code');
