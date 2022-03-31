@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function index()
     {
         $urls = Url::with('user')->paginate(10);
-        return view('pages.admin.index', [
+        return view('pages.admin.url', [
             'urls' => $urls
         ]);
     }

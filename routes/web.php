@@ -23,6 +23,7 @@ Route::post('/store', [UrlController::class, 'store'])->name('url.store');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/links', [AdminController::class, 'index'])->middleware('admin');
+Route::get('/links/{id}', [UrlController::class, 'show'])->middleware('auth');
 Route::get('/users', [AdminController::class, 'user'])->middleware('admin');
 
 Route::get('/{code}', [UrlController::class, 'process'])->name('url.code');

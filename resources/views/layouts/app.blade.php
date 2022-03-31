@@ -63,7 +63,7 @@
                                 </a>
                                 @if(auth()->user()->roles === 'ADMIN')
                                     <a class="dropdown-item" href="{{ url('/links') }}">
-                                        {{ __('All Link') }}
+                                        {{ __('All Url') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ url('/users') }}">
                                         {{ __('User') }}
@@ -78,6 +78,7 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

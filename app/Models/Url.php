@@ -17,6 +17,10 @@ class Url extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function visitor() {
+        return $this->hasMany(Visitor::class);
+    }
+
     protected static function boot()
     {
         parent::boot();

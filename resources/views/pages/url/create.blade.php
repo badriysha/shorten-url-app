@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 @if (Session::has('url'))
                     <div class="alert alert-success">
-                        Your short url: <a id="hash-link" target="_blank" href="{{ session()->get('url') }}">{{ session()->get('url') }}</a>
+                        Your short url: <a id="hash-link" target="_blank" href="{{ session()->get('url') ?? '#' }}">{{ session()->get('url') ?? '#' }}</a>
                     </div>
                 @endif
                 <div class="card">

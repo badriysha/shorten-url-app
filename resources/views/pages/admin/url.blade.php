@@ -26,7 +26,7 @@
                                     <td>{{ $url->user->name ?? '-' }}</td>
                                     <td>{{ $url->created_at->diffForHumans() }}</td>
                                     <td>
-                                        <a href="{{ url("url/{$url->id}") }}">Show</a>
+                                        <a href="{{ url("links/{$url->id}") }}">Show</a>
                                     </td>
                                 </tr>
                             @empty
